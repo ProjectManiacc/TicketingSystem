@@ -1,0 +1,45 @@
+@startuml
+'https://plantuml.com/use-case-diagram
+
+:Main Admin: as Admin
+:Main OfficeWorker: as OfficeWorker
+:Main User: as User
+
+
+OfficeWorker --> (Reject ticket)
+OfficeWorker --> (Duplicate ticket)
+OfficeWorker --> (Forward ticket)
+OfficeWorker --> (Close ticket)
+OfficeWorker --> (Change ticket status)
+
+
+
+User --> (Browse tickets)
+User --> (Create ticket)
+Admin --> (Assign Privileges)
+Admin --> (Delete Ticket)
+User .> OfficeWorker : <extends>
+OfficeWorker .> Admin : <extends>
+
+
+(Browse tickets) ..> (Filter): <extends>
+(Browse tickets) ..> (Sort): <extends>
+(Create ticket) ..> (Add Comment): <extends>
+(Create ticket) ..> (Fill issue description): <include>
+(Create ticket) ..> (Choose issue category): <include>
+(Create ticket) ..> (Attach image file): <include>
+(Create ticket) ..> (Mark on map): <include>
+
+(Forward ticket) ..> (Log in) : <include>
+(Duplicate ticket) ..> (Log in) : <include>
+(Reject ticket) ..> (Log in) : <include>
+(Close ticket) ..> (Log in) : <include>
+(Change ticket status) ..> (Log in) : <include>
+(Create ticket) ..> (Log in): <include>
+(Assign Privileges) ..> (Log in) : <include>
+(Delete Ticket) ..> (Log in) : <include>
+
+
+
+
+@enduml
