@@ -8,9 +8,6 @@ The project is a system used for reporting, managing and browsing tickets descri
 ### Web application
 The purpose of the web application is to expose the backend's functionality to the users. This is the part that the user will directly interact with in the browser. This part
 
-### Backend
-The backend aims to provide the logical components, which will be connected to the web application. This is the part responsible for manipulating the database, processing data and requrest authorization.
-
 ## Functional requirements
 ### General
 - the app allows browsing, creation, updating and deleting tickets.
@@ -78,11 +75,3 @@ The backend aims to provide the logical components, which will be connected to t
 ### User Categories:
 - **Individual:** represents a single user.
 - **Group:** denotes a collective of users working together.
-
-### Technical terms
-- **Web application**: the part of this project which will be present on end clients' devices, i.e. the graphical interface and communication logic.
-- **Backend**: the central part of the code responsible for processing, validation, authorization and handling incoming actions
-- **Frontend, user interface**: the part of the web application responsible for displaying information to the user.
-- **Server** - the device used for executing core application code 
-- **Database**: the part of this project responsible for data storage, including the tickets, user accounts, user privileges and other data.
-- **Backup**: a copy of the database stored in case of unexpected events.
