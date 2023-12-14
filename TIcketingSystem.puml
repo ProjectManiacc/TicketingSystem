@@ -13,7 +13,7 @@ OfficeWorker <|- Admin
 
 rectangle WebApplication {
 OfficeWorker -> (Reject ticket)
-OfficeWorker -> (Duplicate ticket)
+OfficeWorker -> (Mark as duplicate)
 OfficeWorker -> (Forward ticket)
 OfficeWorker -> (Close ticket)
 OfficeWorker -> (Change ticket status)
