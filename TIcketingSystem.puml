@@ -1,14 +1,17 @@
 @startuml
+title TicketingSystem Use Case Diagram
+left to right direction
 'https://plantuml.com/use-case-diagram
 
 :Main Admin: as Admin
 :Main OfficeWorker: as OfficeWorker
 :Main User: as User
 
-User <|--- OfficeWorker
-OfficeWorker <|--- Admin
+User <|- OfficeWorker
+OfficeWorker <|- Admin
 
 
+rectangle WebApplication {
 OfficeWorker -> (Reject ticket)
 OfficeWorker -> (Duplicate ticket)
 OfficeWorker -> (Forward ticket)
@@ -17,20 +20,20 @@ OfficeWorker -> (Change ticket status)
 
 
 
-User -> (Browse tickets)
-User -> (Add comment)
-User -> (Create ticket)
+User --> (Browse tickets)
+User --> (Add comment)
+User --> (Create ticket)
 
-(Browse tickets) <. (Filter): <extends>
-(Browse tickets) <. (Sort): <extends>
-(Create ticket) .> (Log in): <include>
-(Add comment) .> (Log in): <include>
-
-
-Admin -> (Assign Privileges)
-Admin -> (Delete Ticket)
+(Browse tickets) <.. (Filter): <extends>
+(Browse tickets) <.. (Sort): <extends>
+(Create ticket) ..> (Log in): <include>
+(Add comment) ..> (Log in): <include>
 
 
+Admin --> (Assign Privileges)
+Admin --> (Delete Ticket)
+
+}
 
 
 @enduml
