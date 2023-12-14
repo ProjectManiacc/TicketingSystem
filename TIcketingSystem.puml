@@ -5,39 +5,30 @@
 :Main OfficeWorker: as OfficeWorker
 :Main User: as User
 
-
-OfficeWorker --> (Reject ticket)
-OfficeWorker --> (Duplicate ticket)
-OfficeWorker --> (Forward ticket)
-OfficeWorker --> (Close ticket)
-OfficeWorker --> (Change ticket status)
+User <|--- OfficeWorker
+OfficeWorker <|--- Admin
 
 
-
-User --> (Browse tickets)
-User --> (Create ticket)
-Admin --> (Assign Privileges)
-Admin --> (Delete Ticket)
-User .> OfficeWorker : <extends>
-OfficeWorker .> Admin : <extends>
+OfficeWorker -> (Reject ticket)
+OfficeWorker -> (Duplicate ticket)
+OfficeWorker -> (Forward ticket)
+OfficeWorker -> (Close ticket)
+OfficeWorker -> (Change ticket status)
 
 
-(Browse tickets) ..> (Filter): <extends>
-(Browse tickets) ..> (Sort): <extends>
-(Create ticket) ..> (Add Comment): <extends>
-(Create ticket) ..> (Fill issue description): <include>
-(Create ticket) ..> (Choose issue category): <include>
-(Create ticket) ..> (Attach image file): <include>
-(Create ticket) ..> (Mark on map): <include>
 
-(Forward ticket) ..> (Log in) : <include>
-(Duplicate ticket) ..> (Log in) : <include>
-(Reject ticket) ..> (Log in) : <include>
-(Close ticket) ..> (Log in) : <include>
-(Change ticket status) ..> (Log in) : <include>
-(Create ticket) ..> (Log in): <include>
-(Assign Privileges) ..> (Log in) : <include>
-(Delete Ticket) ..> (Log in) : <include>
+User -> (Browse tickets)
+User -> (Add comment)
+User -> (Create ticket)
+
+(Browse tickets) <. (Filter): <extends>
+(Browse tickets) <. (Sort): <extends>
+(Create ticket) .> (Log in): <include>
+(Add comment) .> (Log in): <include>
+
+
+Admin -> (Assign Privileges)
+Admin -> (Delete Ticket)
 
 
 
