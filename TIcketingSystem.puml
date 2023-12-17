@@ -23,11 +23,9 @@ OfficeWorker -> (Change ticket status)
 User --> (Browse tickets)
 User --> (Add comment)
 User --> (Create ticket)
-
+User --> (Log in)
 (Browse tickets) <.. (Filter): <extends>
 (Browse tickets) <.. (Sort): <extends>
-(Create ticket) ..> (Log in): <include>
-(Add comment) ..> (Log in): <include>
 
 
 Admin --> (Assign Privileges)
